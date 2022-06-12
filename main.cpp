@@ -1,6 +1,9 @@
 #include <iostream>
+#include "Funciones.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Desplegar();
     return 0;
 }
+
+
