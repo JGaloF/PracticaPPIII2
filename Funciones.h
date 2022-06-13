@@ -6,6 +6,6 @@
 #define TEMPLATE_FUNCIONES_H
 
 void Desplegar();
-void Calcular();
+void Calcular(int);
 
 #endif //TEMPLATE_FUNCIONES_H

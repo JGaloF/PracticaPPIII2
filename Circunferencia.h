@@ -14,20 +14,20 @@
         public:
         //Constructor y destructor
         Circunferencia();
-        Circunferencia(float);
+        Circunferencia(double);
         ~Circunferencia();
         //Set Get
-        void SetRadio(float);
+        void SetRadio(double);
         float GetRadio();
         //Servicio
         double CalcularPerimetro();
         double CalcularArea();
         private:
-        float radio;
+        double radio;
 
     };
 
-    inline void Circunferencia::SetRadio(float r) {
+    inline void Circunferencia::SetRadio(double r) {
         this->radio = r;
         return;
     }

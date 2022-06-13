@@ -7,7 +7,7 @@ using namespace std;
 
 Circunferencia::Circunferencia() {};
 
-Circunferencia::Circunferencia(float r) {
+Circunferencia::Circunferencia(double r) {
     this->radio = r;
 };
 

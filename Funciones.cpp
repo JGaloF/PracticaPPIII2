@@ -10,8 +10,8 @@
 using namespace std;
 
 Triangulo tr;
-Circunferencia Cr;
-Rectangulo Rc;
+Circunferencia cr;
+Rectangulo rc;
 
 void Desplegar(){
     int eleccion;
@@ -32,27 +32,29 @@ void Desplegar(){
             cin>>l2;
             cin>>l3;
             tr.SetParam(l1,l2,l3);
-            Calcular();
+            Calcular(eleccion);
         case 2:
             cout << "" << endl;
-            cout << "Introduzca parametros del Triangulo: " << endl;
+            cout << "Introduzca parametros del rectangulo: " << endl;
             cin>>l1;
             cin>>l2;
-            Rc.SetLados(l1,l2);
-            Calcular();
+            rc.SetLados(l1, l2);
+            Calcular(eleccion);
         case 3:
             cout << "" << endl;
             cout << "Introduzca parametros del circulo" << endl;
             cin>>l1;
-            Cr.SetRadio(l1);
-            Calcular();
+            cr.SetRadio(l1);
+            Calcular(eleccion);
         default:
             Desplegar();
     }
+    return;
 }
 
-void Calcular(){
+void Calcular(int eleccion){
     int calculo;
+    double resultado;
     cout << "" << endl;
     cout << "Menu de seleccion de calculo: " << endl;
     cout << "1- Perimetro" << endl;
@@ -62,10 +64,31 @@ void Calcular(){
 
     switch (calculo) {
         case 1:
-
+            switch (eleccion) {
+                case 1:
+                    resultado = tr.CalcularPerimetro();
+                case 2:
+                    resultado = rc.CalcularPerimetro();
+                case 3:
+                    resultado = cr.CalcularPerimetro();
+                default:
+                    cout << "Eleccion no valida" << endl;
+            }
+            cout << "El perimetro es: " << resultado << endl;
         case 2:
-
+            switch (eleccion) {
+                case 1:
+                    resultado = tr.CalcularArea();
+                case 2:
+                    resultado = rc.CalcularArea();
+                case 3:
+                    resultado = cr.CalcularArea();
+                default:
+                    cout << "Eleccion no valida" << endl;
+            }
+            cout << "El Area es: " << resultado << endl;
         default:
-            Calcular();
+            Calcular(eleccion);
     }
+    return;
 }
